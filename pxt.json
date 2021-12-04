@@ -1,15 +1,14 @@
 {
-    "name": "MakerBit-Motor",
-    "version": "1.0.9",
-    "description": "Motor controller for MakerBit",
+    "name": "Keystudio-Ks0308",
+    "version": "2.0.0",
+    "description": "Allows control of motor controller on the Keystudio Ks0308.",
     "license": "MIT",
     "dependencies": {
         "core": "*"
     },
     "files": [
         "README.md",
-        "motor.ts",
-        "_locales/de/MakerBit-Motor-strings.json"
+        "motor.ts"
     ],
     "testFiles": [
         "test.ts"

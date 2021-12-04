@@ -1,13 +1,13 @@
 {
-  "MakerBitMotor.All|block": "A + B",
-  "MakerBitMotor.A|block": "A",
-  "MakerBitMotor.B|block": "B",
-  "MakerBitMotorRotation.Backward|block": "backward",
-  "MakerBitMotorRotation.Forward|block": "forward",
-  "makerbit.runMotor|block": "run motor %motor | at %speed \\%",
-  "makerbit.setMotorRotation|block": "set motor %motor rotation | to %rotation",
-  "makerbit.stopMotor|block": "stop motor %motor",
-  "makerbit|block": "MakerBit",
-  "{id:category}Makerbit": "Makerbit",
+  "ks03080Motor.All|block": "A + B",
+  "ks03080Motor.A|block": "A",
+  "ks03080Motor.B|block": "B",
+  "ks03080MotorRotation.Backward|block": "backward",
+  "ks03080MotorRotation.Forward|block": "forward",
+  "ks03080.runMotor|block": "run motor %motor | at %speed \\%",
+  "ks03080.setMotorRotation|block": "set motor %motor rotation | to %rotation",
+  "ks03080.stopMotor|block": "stop motor %motor",
+  "ks03080|block": "ks03080",
+  "{id:category}ks03080": "ks03080",
   "{id:subcategory}Motors": "Motors"
 }

@@ -1,45 +1,66 @@
-# MakerBit Motor
+# Work in progress! This fork is not yet functional!
 
-[![Build Status](https://travis-ci.org/1010Technologies/pxt-makerbit-motor.svg?branch=master)](https://travis-ci.org/1010Technologies/pxt-makerbit-motor)
+# Keyestudio Ks0308 Motor Controller
 
-MakeCode package for the MakerBit motor driver.
+MakeCode package for the the Keystudio Kc0308 motor driver.
 
-## MakerBit Board
+## Keyestudio Ks0308
 
-The MakerBit connects to the BBC micro:bit to provide easy connections to a wide variety of sensors, actuators and other components. Among other things, it features a motor driver.
+This is a breakout board by Keyestudio that allows easy access to pins from a micro:bit and a handy on-board power converter and motor controller.
 
-http://makerbit.com/
+Keyestudio Wiki Page for the board: https://wiki.keyestudio.com/Ks0308_keyestudio_Motor_Drive_Breakout_Board_for_micro_bit
 
-| ![MakerBit](https://github.com/1010Technologies/pxt-makerbit/raw/master/MakerBit.png "MakerBit") | ![MakerBit+R](https://github.com/1010Technologies/pxt-makerbit/raw/master/MakerBit+R.png "MakerBit+R") |
-| :----------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------: |
-|                                            _MakerBit_                                            |                                   _MakerBit+R with motor controller_                                   |
+![Keyestudio Ks0308](https://wiki.keyestudio.com/images/e/e9/Ks0308.png)
 
-## Motor Blocks
+## Important Notes:
+I do not work for nor represent Keyestudio. I am just a father who wanted to make it easier for his daughter to use the board.
 
-The MakerBit board provides a motor controller that can control two bi-directional DC motors, or four one-direction motors.
+I was going to start from scratch and attempt to build my first MakeCode extension, but I found this awesome extension for the [MakerBit](http://makerbit.com/) (which I also do not represent) that had similar basic functionality built. It is licensed with the MIT license (as is this fork).
 
-### MakerBit runMotor
+For information on the original code for the MakerBit please visit http://makerbit.com/ or the [original GitHub repo](https://github.com/1010Technologies/pxt-makerbit-motor).
+--------------------------------------------------------
+## details
+
+The board provides a breakout board for the micro:bit, but also a 2 chanel motor controller for bi-directional DC motors.
+
+### runMotor
 
 Sets the speed of a motor in the range of -100 to 100.
 
 ```sig
-makerbit.runMotor(MakerBitMotor.A, 80)
+ks03080.runMotor(ks03080Motor.A, 80)
 ```
 
-### MakerBit stopMotor
+### stopMotor
 
 Stops a motor.
 
 ```sig
-makerbit.stopMotor(MakerBitMotor.A)
+ks03080.stopMotor(ks03080Motor.A)
 ```
 
-### MakerBit setMotorDirection
+### setMotorDirection
 
 Sets the rotation direction of a motor. Use this function at start time to configure your motors without the need to rewire.
 
 ```sig
-makerbit.setMotorRotation(MakerBitMotor.A, MakerBitMotorRotation.Backward)
+ks03080.setMotorRotation(ks03080Motor.A, ks03080MotorRotation.Backward)
+```
+
+### enableMotorController
+
+Enables the motor controller on the Ks03080
+
+```sig
+ks03080.enableMotorCotroller()
+``` 
+
+### moveRover
+
+Move the rover in a direction at a set speed.
+
+```sig
+ks03080.moveRover(ks03080RoverDirection.Forward, 20)
 ```
 
 ## License

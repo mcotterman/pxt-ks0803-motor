@@ -2,14 +2,14 @@
  * Motor tests
  */
 
-makerbit.runMotor(MakerBitMotor.A, 80);
-makerbit.stopMotor(MakerBitMotor.A);
+ks03080.runMotor(ks03080Motor.A, 80);
+ks03080.stopMotor(ks03080Motor.A);
 
-makerbit.runMotor(MakerBitMotor.B, -50);
-makerbit.stopMotor(MakerBitMotor.B);
+ks03080.runMotor(ks03080Motor.B, -50);
+ks03080.stopMotor(ks03080Motor.B);
 
-makerbit.runMotor(MakerBitMotor.All, 80);
-makerbit.stopMotor(MakerBitMotor.All);
+ks03080.runMotor(ks03080Motor.All, 80);
+ks03080.stopMotor(ks03080Motor.All);
 
-makerbit.setMotorRotation(MakerBitMotor.A, MakerBitMotorRotation.Forward);
-makerbit.setMotorRotation(MakerBitMotor.B, MakerBitMotorRotation.Backward);
+ks03080.setMotorRotation(ks03080Motor.A, ks03080MotorRotation.Forward);
+ks03080.setMotorRotation(ks03080Motor.B, ks03080MotorRotation.Backward);
