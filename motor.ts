@@ -53,12 +53,12 @@ namespace ks03080 {
 
   const ks03080Rover = {
     leftMotor: {
-      motor: ks03080Motor.A,
+      motor: ks03080Motor.B,
       direction: ks03080MotorRotation.Forward
     },
     rightMotor: {
       motor: ks03080Motor.A,
-      direction: ks03080MotorRotation.Forward
+      direction: ks03080MotorRotation.Backward
     }
   }
 
@@ -82,10 +82,10 @@ namespace ks03080 {
   export function motorControllerStatus(status: ks03080MotorControllerStatus): void {
     if (status == 1) {
       led.enable(false)
-      pins.analogWritePin(AnalogPin.P1, 1)
+      pins.digitalWritePin(DigitalPin.P14, 1)
     } else {
       led.enable(true)
-      pins.analogWritePin(AnalogPin.P1, 0)
+      pins.digitalWritePin(DigitalPin.P14, 0)
     }
   }
 
@@ -163,13 +163,13 @@ namespace ks03080 {
 
     if (motor === ks03080Motor.A || motor === ks03080Motor.All) {
       const isClockwise = speed * motorRotations[ks03080Motor.A] > 0;
-      pins.digitalWritePin(DigitalPin.P11, isClockwise ? 1 : 0);
-      pins.digitalWritePin(DigitalPin.P12, isClockwise ? 0 : 1);
+      pins.digitalWritePin(DigitalPin.P12, isClockwise ? 1 : 0);
+      pins.digitalWritePin(DigitalPin.P13, isClockwise ? 0 : 1);
       if (speed === 100) {
         // Avoid PWM whenever possible as only 3 concurrent PWM outputs are available on the microbit
-        pins.digitalWritePin(DigitalPin.P13, 1);
+        pins.digitalWritePin(DigitalPin.P1, 1);
       } else {
-        pins.analogWritePin(AnalogPin.P13, analogSpeed);
+        pins.analogWritePin(AnalogPin.P1, analogSpeed);
       }
     }
 
@@ -179,9 +179,9 @@ namespace ks03080 {
       pins.digitalWritePin(DigitalPin.P16, isClockwise ? 0 : 1);
       if (speed === 100) {
         // Avoid PWM whenever possible as only 3 concurrent PWM outputs are available on the microbit
-        pins.digitalWritePin(DigitalPin.P14, 1);
+        pins.digitalWritePin(DigitalPin.P2, 1);
       } else {
-        pins.analogWritePin(AnalogPin.P14, analogSpeed);
+        pins.analogWritePin(AnalogPin.P2, analogSpeed);
       }
     }
   }
@@ -195,7 +195,6 @@ namespace ks03080 {
   //% weight=89
   export function stopMotor(motor: ks03080Motor): void {
     if (motor === ks03080Motor.A || motor === ks03080Motor.All) {
-      // pins.digitalWritePin(DigitalPin.P11, 0);
       pins.digitalWritePin(DigitalPin.P12, 0);
       pins.digitalWritePin(DigitalPin.P13, 0);
       pins.analogWritePin(AnalogPin.P1, 0)
@@ -204,8 +203,7 @@ namespace ks03080 {
     if (motor === ks03080Motor.B || motor === ks03080Motor.All) {
       pins.digitalWritePin(DigitalPin.P15, 0);
       pins.digitalWritePin(DigitalPin.P16, 0);
-      // pins.digitalWritePin(DigitalPin.P14, 0);
-      pins.analogWritePin(AnalogPin.P1, 0)
+      pins.analogWritePin(AnalogPin.P2, 0)
     }
   }
 
