@@ -58,7 +58,7 @@ namespace ks03080 {
     },
     rightMotor: {
       motor: ks03080Motor.A,
-      direction: ks03080MotorRotation.Backward
+      direction: ks03080MotorRotation.Forward
     }
   }
 
