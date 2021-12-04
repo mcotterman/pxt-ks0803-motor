@@ -1,4 +1,4 @@
-# Work in progress! This fork is not yet functional!
+# Work in progress!
 
 # Keyestudio Ks0308 Motor Controller
 
@@ -49,15 +49,38 @@ ks03080.setMotorRotation(ks03080Motor.A, ks03080MotorRotation.Backward)
 
 ### enableMotorController
 
-Enables the motor controller on the Ks03080
+Enables the motor controller on the Ks03080. You must add this block to the OnStart block to enable the controller for your program.
 
 ```sig
 ks03080.enableMotorCotroller()
 ``` 
 
+### customizeRover
+
+Allows customization of rover motor and direction for forward movement.
+Left and Right are from the perspective of the driver facing forward.
+
+
+Defaults:
+Right - Motor A - Forward
+Left - Motor B - Forward
+
+```sig
+ks03080.customizeRover(ks03080RoverSide.Right, ks03080Motor.A, ks03080MotorRotation.Forward)
+```
+
 ### moveRover
 
 Move the rover in a direction at a set speed.
+
+Direction options are:
+* Forward
+* Backward
+* Stop (speed is ignored)
+* Left
+* Right
+
+Speed is an integer value from 0 - 100 and is read as a percentage of maximum speed.
 
 ```sig
 ks03080.moveRover(ks03080RoverDirection.Forward, 20)

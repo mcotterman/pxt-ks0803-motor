@@ -114,7 +114,7 @@ namespace ks03080 {
    * @param speed percentage in the range of 0 to 100, eg: 80
    */
   //% subcategory=Rover
-  //% blockId="ks03080_move_rover" block="move rover|direction %direction|speed %speed"
+  //% blockId="ks03080_move_rover" block="move rover %direction|at speed %speed percent"
   //% speed.min=0
   //% speed.max=100
   //% weight=230
